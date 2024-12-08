@@ -1,0 +1,186 @@
+*{
+    padding: 0px;
+    margin:  0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #fefefe;
+    min-width: 300px;
+}
+
+.Navbar{
+    height: 55px;
+    width: 95%;
+    padding: 8px 20px;
+    background: white;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    box-shadow: 0px 0px 40px #0000001A;
+    border-radius: 0px 0px 8px 8px;
+    position: sticky;
+    top: 0;
+    /* let top right top left bottom right bottom*/
+}
+/*
+.logoBox{
+    height: 100%;
+}
+
+.logoBox > img{
+    height: 100%;
+    object-fit: contain;
+}
+*/
+
+.logoContainer{
+    height: 100%;
+    width: 30%;
+    display: flex;
+}
+
+.logoContainerLink{
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.logoContainerLink > img{
+    height: 80%;
+    width: auto;
+    object-fit: contain;
+}
+
+.linkContainer{
+    width: 70%;
+    display: flex;
+    justify-content: right;
+}
+
+.linkContainerList{
+    list-style: none;
+    display: flex;
+}
+
+.linkContainerListItem{
+    margin: 0px 4px;
+}
+
+.linkContainerListItemLink{
+    padding: 10px 12px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.linkContainerListItemLink:hover{
+    color: blue;
+}
+
+.Hamburger{
+    height: 35px;
+    width:  35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+}
+
+.HamburgerLine{
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.HamburgerLine:first-child{
+    margin-bottom: 5px;
+}
+
+.HamburgerLine:last-child{
+    margin-top: 5px;
+}
+
+
+
+
+.footer{
+    background: black;
+    width: 95%;
+    padding: 8px 20px;
+    margin: auto;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.footerContainer{
+    display: flex;
+}
+
+.footerSubContainer{
+    width: 100%;
+}
+
+.footerNavigationBar{
+
+}
+
+.footerNavigationBar h3{
+    color: white;
+    margin-bottom: 10px;
+    padding: 8px 15px;
+}
+
+.footerNavigationBarList{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.footerNavigationBarListItem{
+    padding: 8px 20px;
+}
+
+.footerNavigationBarListItem > a{
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+}
+
+.bottomFooter{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.bottomFooter > p{
+    text-align: center;
+    color: white;
+}
+
+
+.line{
+    width: 2px;
+    height: calc(100% - 10%);
+    background-color: white;
+}
+
+
+
+@media (max-width: 900px) {
+    .logoContainer{
+        width: 100%;
+    }
+    .linkContainer{
+        display: none;
+    }
+
+    .Hamburger{
+        display: flex;
+    }
+}
