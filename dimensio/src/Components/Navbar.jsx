@@ -15,10 +15,10 @@ function Navbar() {
                         <a href="#" className='linkContainerListItemLink'>Home</a>
                     </li>
                     <li className='linkContainerListItem'>
-                        <a href="#" className='linkContainerListItemLink'>Service</a>
+                        <a href="#" className='linkContainerListItemLink'>Products</a>
                     </li>
                     <li className='linkContainerListItem'>
-                        <a href="#" className='linkContainerListItemLink'>Products</a>
+                        <a href="#" className='linkContainerListItemLink'>Service</a>
                     </li>
                     <li className='linkContainerListItem'>
                         <a href="#" className='linkContainerListItemLink'>Careers</a>
