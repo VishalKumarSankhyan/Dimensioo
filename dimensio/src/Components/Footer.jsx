@@ -1,5 +1,7 @@
 import flagOfIndia from "../Assets/Flag_of_India.png"
 
+import { NavLink } from "react-router-dom";
+
 function Footer() {
     return (
         <footer className="footer">
@@ -9,25 +11,25 @@ function Footer() {
                     <nav className="footerNavigationBar">
                         <ul className="footerNavigationBarList">
                             <li className="footerNavigationBarListItem">
-                                <a className="footerNavigationBarListItemLink" href="#">Home</a>
+                                <NavLink to={'/'} className={({isActive})=> `footerNavigationBarListItemLink ${isActive ? 'active' : ''}`}>Home</NavLink>
                             </li>
                             <li className="footerNavigationBarListItem">
-                                <a className="footerNavigationBarListItemLink" href="#">Products</a>
+                                <NavLink to={'/products'} className={({isActive})=> `footerNavigationBarListItemLink ${isActive ? 'active' : ''}`}>Products</NavLink>
                             </li>
                             <li className="footerNavigationBarListItem">
-                                <a className="footerNavigationBarListItemLink" href="#">Service</a>
+                                <NavLink to={'/service'} className={({isActive})=> `footerNavigationBarListItemLink ${isActive ? 'active' : ''}`}>Service</NavLink>
                             </li>
                             <li className="footerNavigationBarListItem">
-                                <a className="footerNavigationBarListItemLink" href="#">Careers</a>
+                                <NavLink to={'/careers'} className={({isActive})=> `footerNavigationBarListItemLink ${isActive ? 'active' : ''}`}>Careers</NavLink>
                             </li>
                         </ul>
 
                         <ul className="footerNavigationBarList">
                             <li className="footerNavigationBarListItem">
-                                <a className="footerNavigationBarListItemLink" href="#">Contact</a>
+                                <NavLink to={'/contact'} className={({isActive})=> `footerNavigationBarListItemLink ${isActive ? 'active' : ''}`}>Contact</NavLink>
                             </li>
                             <li className="footerNavigationBarListItem">
-                                <a className="footerNavigationBarListItemLink" href="#">About</a>
+                                <NavLink to={'/about'} className={({isActive})=> `footerNavigationBarListItemLink ${isActive ? 'active' : ''}`}>About</NavLink>
                             </li>
 
 

@@ -7,9 +7,14 @@
 
 body{
     /* background-color: #fefefe; */
+    background-color: #f1f2f4;
+}
+
+.AppContainer{
     background-color: #2c3733;
     min-width: 300px;
-    /* max-width: ; */
+    max-width: 1500px;
+    margin: auto;
 }
 
 .text{
@@ -534,6 +539,10 @@ body{
     padding: 10px;
 }
 
+.ContactFormSubContainer > input:focus{
+    border-color: #6ffcd1;
+}
+
 .ContactFormSubContainer > textarea{
     border: none;
     border-bottom: 2px solid black;
@@ -542,6 +551,11 @@ body{
     resize: vertical;
     width: 100%;
 }
+
+.ContactFormSubContainer > textarea:focus{
+    border-color: #6ffcd1;
+}
+
 
 .ContactFormSubContainer:last-child{
     display: flex;
@@ -579,31 +593,57 @@ body{
     margin: 10px;
 }
 
+
 .ServicePageContainer{
-    display: flex;
+    /*display: flex;
+    justify-content: start;
+    flex-wrap: wrap;*/
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 columns of equal width */
+    gap: 10px;
 }
 
-.ServicePageImageContainer{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.ServiceCardSVGContainer{
+    height: 90px;
+    width:  90px;
+    margin: auto;
+    color: black;
 
-.ServicePageImageContainer > img{
-    width: 45%;
-    height: auto;
-    object-fit: contain;
-}
-
-.ServiceSubContainer{
-    width: 100%;
+    
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.ServiceCardSVGContainer > svg{
+    width:      75px;
+    height:     75px;
+    min-height: 75px;
+    min-width:  75px;
+    max-height: 75px;
+    max-width:  75px;
+}
 
+.ServiceCard{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px #0000001A;
+    padding: 20px;
+    max-width: 250px;
+    margin: 20px;
+}
+
+.ServiceCardTitle{
+    text-align: center;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+.ServiceCardContent{
+    text-align: center;
+    font-size: 13px;
+}
 
 
 
@@ -674,7 +714,7 @@ body{
 }
 
 .CareerPageImageContainer > img{
-    width: 45%;
+    width: 65%;
     height: auto;
     object-fit: contain;
 }
@@ -684,6 +724,238 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.CareerPageContentSubContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.CareerPageContentHeading{
+    color: white;
+    text-align: center;
+    margin-bottom: 13px;
+}
+
+.CareerPageContentSubHeading{
+    color: white;
+    text-align: center;
+    margin-bottom: 13px;
+    font-size: 16px;
+    max-width: 500px;
+}
+
+.CareerPageContentButton{
+    padding: 8px 14px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 1px solid white;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.CareerPageContentList{
+    color: white;
+    list-style:disc;
+    width: 100%;
+    padding: 0px 18px;
+}
+
+.CareerPageContentListItem{
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.CareerPageContentSubContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.CareerPageSubHeading{
+    color: white;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.CareerPageHiringContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 columns of equal width */
+    gap: 10px;
+}
+
+.HiringCard{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px #0000001A;
+    padding: 20px;
+    max-width: 250px;
+    margin: 20px;
+}
+
+.HiringCardTitle{
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: 4px;
+}
+
+
+.HiringCardSVGContainer{
+    height: 90px;
+    width:  90px;
+    margin: auto;
+    color: black;
+
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HiringCardSVGContainer > svg{
+    width:      75px;
+    height:     75px;
+    min-height: 75px;
+    min-width:  75px;
+    max-height: 75px;
+    max-width:  75px;
+}
+
+.HiringCardContent{
+    text-align: center;
+    font-size: 13px;
+}
+
+.HiringCardSubHeading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.HiringCardLocation{
+    background-color: #2c3733;
+    color: white;
+    padding: 5px 13px;
+    border-radius: 30px;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.HiringCardJobType{
+    background-color: #2c3733;
+    color: white;
+    padding: 5px 13px;
+    border-radius: 30px;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.HiringCardDescriptionContainer{
+    max-height: 40px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.HiringCardDescriptionShowMore{
+    max-height: unset;
+    padding-bottom: 30px;
+}
+
+.HiringCardDescription{
+    font-size: 13px;
+}
+
+.HiringCardDescriptionhide{
+    width: 100%;
+    height: 20px;
+    background-color: white;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 0;
+}
+
+.HiringCardButton{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: white;
+    padding: 3px 8px;
+    border-radius: 30px;
+    margin: auto;
+    width: fit-content;
+    cursor: pointer;
+}
+
+
+.HiringCardApplyButton{
+    padding: 8px 14px;
+    background-color: #2c3733;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 1px solid #2c3733;
+    white-space: nowrap;
+    font-size: 14px;
+    width: 100%;
+}
+
+
+.ApplySection{
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000040;
+}
+
+.ApplySectionConatiner{
+    background-color: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+}
+
+.ApplySectionForm{
+  
+}
+
+.ErrorPageContainer{
+    width: 95%;
+}
+
+.ErrorPageImageContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ErrorPageImageContainer > img{
+    width: 50%;
+    object-fit: contain;
+}
+
+.EroorPageHeading{
+    color: white;
+    margin-bottom: 20px;
 }
 
 
@@ -692,21 +964,98 @@ body{
 
 
 
+.MobileMenu{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    background-color: #2c3733;
+}
+
+.MobileMenuContainer{
+    width: 95%;
+    margin: auto;
+}
+
+.MobileMenuNavbar{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    padding: 8px 20px;
+}
+
+.MobileMenuLeftNavbar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.MobileMenuRightNavbar{
+    height: 100%;
+}
+
+.MobileMenuNavbarLogo{
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+
+.MobileMenuNavbarLogo > img{
+    height: 80%;
+    width: auto;
+    object-fit: contain;
+}
 
 
 
+.logoContainerLink{
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
 
 
+.MobileMenuNavbarButton{
+    height: 40px;
+    width:  40px;
+    background-color: #6ffcd1;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.MobileMenuNavbarButton > svg{
+    height:     25px;
+    width:      25px;
+    max-width:  25px;
+    max-height: 25px;
+    min-width:  25px;
+    min-height: 25px;
+}
 
 
+.MobileMenuList{
+    list-style: none;
+    margin-top: 20px;
+}
 
+.MobileMenuListItem{
+    margin-bottom: 10px;
+}
 
-
-
-
-
-
-
+.MobileMenuListItemLink{
+    padding: 10px 20px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+}
 
 
 
@@ -813,6 +1162,26 @@ body{
     .ContactPageHeading{
         text-align: center;
     }
+
+    .ServicePageContainer{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .CareerPageContainer{
+        flex-direction: column;
+    }
 }
 
 
+@media (max-width: 500px) {
+    .ServicePageContainer{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+}
+
+
+.active{
+    color: #6ffcd1;
+}

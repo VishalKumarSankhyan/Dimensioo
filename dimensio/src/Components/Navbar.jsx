@@ -1,38 +1,40 @@
 import logo from '../Assets/wordlogo.png'
 import mainlogo from '../Assets/icon.png'
-function Navbar() {
+
+import { Link, NavLink } from 'react-router-dom';
+function Navbar({toggleMobileMenu}) {
     return (
         <nav className="Navbar">
             <div className='logoContainer'>
 
-                <a href="#" className='logoContainerLink'>
+                <Link to="/" className='logoContainerLink'>
                     <img src={logo} alt="logo" />
-                </a>
+                </Link>
             </div>
             <div className='linkContainer'>
                 <ul className='linkContainerList'>
                     <li className='linkContainerListItem'>
-                        <a href="#" className='linkContainerListItemLink'>Home</a>
+                        <NavLink to="/" className={({isActive})=> `linkContainerListItemLink ${isActive ? 'active' : ''}`} >Home</NavLink>
                     </li>
                     <li className='linkContainerListItem'>
-                        <a href="#" className='linkContainerListItemLink'>Products</a>
+                        <NavLink to="/products" className={({isActive})=> `linkContainerListItemLink ${isActive ? 'active' : ''}`}>Products</NavLink>
                     </li>
                     <li className='linkContainerListItem'>
-                        <a href="#" className='linkContainerListItemLink'>Service</a>
+                        <NavLink to="/service" className={({isActive})=> `linkContainerListItemLink ${isActive ? 'active' : ''}`}>Service</NavLink>
                     </li>
                     <li className='linkContainerListItem'>
-                        <a href="#" className='linkContainerListItemLink'>Careers</a>
+                        <NavLink to="/careers" className={({isActive})=> `linkContainerListItemLink ${isActive ? 'active' : ''}`}>Careers</NavLink>
                     </li>
                     <li className='linkContainerListItem'>
-                        <a href="#" className='linkContainerListItemLink'>Contact</a>
+                        <NavLink to="/contact" className={({isActive})=> `linkContainerListItemLink ${isActive ? 'active' : ''}`}>Contact</NavLink>
                     </li>
                     <li className='linkContainerListItem'>
-                        <a href="#" className='linkContainerListItemLink'>About</a>
+                        <NavLink to="/about" className={({isActive})=> `linkContainerListItemLink ${isActive ? 'active' : ''}`}>About</NavLink>
                     </li>
                 </ul>
             </div>
 
-            <div className='HamburgerMenu'>
+            <div className='HamburgerMenu' onClick={toggleMobileMenu}>
                 <div className='Hamburger'>
                     <div className='HamburgerLine'></div>
                     <div className='HamburgerLine'></div>

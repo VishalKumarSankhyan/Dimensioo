@@ -1,14 +1,169 @@
 import careerImage from "../Assets/careerImage.png";
-export default function CareersPage (){
+import teamworkImage from "../Assets/teamwork.png";
+import teamwork2Image from "../Assets/teamwork2.png";
+import ApplySection from "./ApplySection";
+import HiringCard from "./HiringCard";
+import HiringCardContainer from "./HiringCardContainer";
+import { useState } from "react";
+export default function CareersPage() {
+    // <h2 className="CareerPageHeading">Careers</h2>
+
+    const hiring_List = [
+        {
+            "id": 1,
+            "title": "Frontend Developer",
+            "location": "Remote or Hybrid",
+            "jobType": "Full-time",
+            "description": "Responsible for creating responsive, user-friendly interfaces using modern web technologies like HTML, CSS, JavaScript, and frameworks such as React or Angular.",
+            "showDescription": false
+        },
+        {
+            "id": 2,
+            "title": "Backend Developer",
+            "location": "Onsite or Remote",
+            "jobType": "Full-time",
+            "description": "Builds server-side logic, APIs, and database systems using technologies like Node.js, Python, PHP, or Java.",
+            "showDescription": false
+        },
+        {
+            "id": 3,
+            "title": "Full-Stack Developer",
+            "location": "Hybrid",
+            "jobType": "Full-time",
+            "description": "Handles both frontend and backend development, ensuring seamless integration and functionality across the entire web application.",
+            "showDescription": false
+        },
+        {
+            "id": 4,
+            "title": "UI/UX Designer",
+            "location": "Remote",
+            "jobType": "Part-time or Full-time",
+            "description": "Designs intuitive and visually appealing user interfaces while optimizing user experience through research and testing.",
+            "showDescription": false
+        },
+        {
+            "id": 5,
+            "title": "Quality Assurance (QA) Engineer",
+            "location": "Remote or Hybrid",
+            "jobType": "Part-time",
+            "description": "Ensures the quality of web applications through manual and automated testing, bug tracking, and performance analysis.",
+            "showDescription": false
+        },
+        {
+            "id": 6,
+            "title": "Project Manager",
+            "location": "Onsite or Remote",
+            "jobType": "Full-time",
+            "description": "Oversees web development projects, manages client expectations, and ensures timely delivery by coordinating teams effectively.",
+            "showDescription": false
+        },
+        {
+            "id": 7,
+            "title": "Digital Marketing Specialist",
+            "location": "Remote",
+            "jobType": "Internship or Full-time",
+            "description": "Implements SEO, SEM, and social media campaigns to enhance the agency's digital presence and drive client engagement.",
+            "showDescription": false
+        },
+        {
+            "id": 8,
+            "title": "Content Writer",
+            "location": "Remote",
+            "jobType": "Internship or Part-time",
+            "description": "Creates engaging content for blogs, websites, and marketing campaigns, optimizing for search engines and user engagement.",
+            "showDescription": false
+        },
+        {
+            "id": 9,
+            "title": "DevOps Engineer",
+            "location": "Onsite or Remote",
+            "jobType": "Full-time",
+            "description": "Manages cloud infrastructure, automates deployment pipelines, and ensures high availability and performance of web applications.",
+            "showDescription": false
+        },
+        {
+            "id": 10,
+            "title": "Web Development Intern",
+            "location": "Remote",
+            "jobType": "Internship",
+            "description": "Assists in web development projects, learning hands-on with real-world applications using technologies like HTML, CSS, JavaScript, and backend tools.",
+            "showDescription": false
+        }
+    ]
+
+    const [jobs, setJobs] = useState(hiring_List);
+
+    const toggleDescription = (id) =>{
+    
+          const updatedJobs = jobs.map((job) =>
+            job.id === id ? { ...job, showDescription: !job.showDescription } : job
+          );
+          setJobs(updatedJobs);
+          console.log(id);
+    }
+
     return (
         <section className="CareerPage">
-            <h3 className="CareerPageHeading">Careers</h3>
             <div className="CareerPageContainer">
                 <div className="CareerPageImageContainer">
                     <img src={careerImage} alt="career image" />
                 </div>
-                <div className="CareerPageContentContainer"></div>
+                <div className="CareerPageContentContainer">
+                    <div className="CareerPageContentSubContainer">
+                        <h2 className="CareerPageContentHeading">Shape the Future with Dimensio.</h2>
+                        <p className="CareerPageContentSubHeading">At Dimensio, we create digital experiences and opportunities that make an impact. Let’s grow together!</p>
+                    </div>
+                    <div className="CareerPageContentSubContainer">
+                        <button className="CareerPageContentButton">Apply Now</button>
+                    </div>
+                </div>
             </div>
+
+            <br />
+            <div className="CareerPageContainer">
+                <div className="CareerPageContentContainer">
+                    <div className="CareerPageContentSubContainer">
+                        <h2 className="CareerPageSubHeading">Why Dimensio?</h2>
+                        <ol className="CareerPageContentList">
+                            <li className="CareerPageContentListItem">Innovative and creative environment.</li>
+                            <li className="CareerPageContentListItem">Opportunities for growth and learning.</li>
+                            <li className="CareerPageContentListItem">Flexible working hours or remote options.</li>
+                            <li className="CareerPageContentListItem">Diverse and inclusive workplace.</li>
+                            <li className="CareerPageContentListItem">Collaborative team culture.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div className="CareerPageImageContainer">
+                    <img src={teamworkImage} alt="career image" />
+                </div>
+            </div>
+
+            <h3 className="CareerPageHeading">We’re Hiring!</h3>
+
+            <HiringCardContainer jobs={jobs} toggleDescription={toggleDescription}></HiringCardContainer>
+            <ApplySection/>
+
+            <br />
+
+            <div className="CareerPageContainer">
+                <div className="CareerPageImageContainer">
+                    <img src={teamwork2Image} alt="career image" />
+                </div>
+
+                <div className="CareerPageContentContainer">
+                    <div className="CareerPageContentSubContainer">
+                        <h2 className="CareerPageSubHeading">How to Join Us</h2>
+                        <ol className="CareerPageContentList">
+                            <li className="CareerPageContentListItem">Submit your application online.</li>
+                            <li className="CareerPageContentListItem">Initial screening and interview.</li>
+                            <li className="CareerPageContentListItem">Skill assessment (if applicable).</li>
+                            <li className="CareerPageContentListItem">Final discussion and onboarding.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <p>We value your time and strive to make the process seamless and transparent.</p>
         </section>
     )
 }

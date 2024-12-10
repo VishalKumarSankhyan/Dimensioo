@@ -1,34 +1,26 @@
+import AppContainer from "./Components/AppContainer";
 import Navbar from "./Components/Navbar"
 import Footer from "./Components/Footer";
-import Ribbon from "./Components/Ribbon";
-
-import HeroSection from "./Components/HeroSection";
-import ContactPage from "./Components/ContactPage";
-
-import AboutPage from "./Components/AboutPage";
-import CareersPage from "./Components/CareersPage";
-import ServicePage from "./Components/ServicePage";
-import ProductsPage from "./Components/ProductsPage";
-
 import './style.css';
-function App() {
+import { Outlet } from "react-router-dom";
+import MobileMenu from "./Components/MobileMenu";
+import { useState } from "react";
 
+function App() {
+  const [showMenu, setShowMenu] = useState(false);
+  const toggleMobileMenu = ()=>{
+    setShowMenu((prevState)=> !prevState)
+  }
   return (
     <>
-      <Navbar></Navbar>
-      <HeroSection></HeroSection>
-      <Ribbon></Ribbon>
-
-      <AboutPage/>
-      <ContactPage/>
-
-      <CareersPage/>
-      <ServicePage/>
-      <ProductsPage/>
-
-      <br />
-
-      <Footer></Footer>
+      <AppContainer>
+        <Navbar toggleMobileMenu={toggleMobileMenu} />
+        {
+          showMenu ? <MobileMenu toggleMobileMenu={toggleMobileMenu}/> : ''
+        }
+        <Outlet/>
+        <Footer/>
+      </AppContainer>
     </>
   )
 }
