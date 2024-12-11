@@ -1,6 +1,5 @@
-function HiringCard({job, toggleDescription}){
+function HiringCard({job, toggleDescription, openApplySection}){
 
-    console.log(job);
     if(job == undefined){
         return '';
     }
@@ -27,7 +26,7 @@ function HiringCard({job, toggleDescription}){
                         <p className="HiringCardSubHeading">Job Type: <span className="HiringCardJobType">{job.jobType}</span></p>
                     </div>
 
-                    <button className="HiringCardApplyButton">Apply</button>
+                    <button className="HiringCardApplyButton" onClick={()=>{openApplySection(job)}}>Apply</button>
                 </div>
     )
 }

@@ -92,14 +92,69 @@ export default function CareersPage() {
     ]
 
     const [jobs, setJobs] = useState(hiring_List);
+    const [job, setJob] = useState({});
 
-    const toggleDescription = (id) =>{
-    
-          const updatedJobs = jobs.map((job) =>
+    const [showApplySection, setShowApplySection] = useState(false);
+
+    const toggleDescription = (id) => {
+
+        const updatedJobs = jobs.map((job) =>
             job.id === id ? { ...job, showDescription: !job.showDescription } : job
-          );
-          setJobs(updatedJobs);
-          console.log(id);
+        );
+        setJobs(updatedJobs);
+        console.log(id);
+    }
+
+    const openApplySection = (job) => {
+        setJob(job)
+        setShowApplySection(true);
+    }
+
+    const closeApplySection = () => {
+        setShowApplySection(false);
+    }
+
+    const submitForm = (event) => {
+        event.preventDefault();
+
+        let api = "https://script.google.com/macros/s/AKfycbzTDvffrILwqoK5NugHZzTF0R1bVoAYw_7ir6Bde6GGZIObDg07oN1T5ytLHYyR7hHX5w/exec";
+
+        let data = new FormData(event.target);
+
+
+        fetch(api,{method:"POST", body:data}).then(res=> res.text()).then(data=>console.log(data))
+
+        /*let name = event.target.name.value;
+        let email = event.target.email.value;
+        let phoneNumber = event.target.phoneNumber.value;
+        let age = event.target.age.value;
+        let gender = event.target.gender.value;
+        let experience = event.target.experience.value;
+        let qualification = event.target.qualification.value;
+        let positionApplied = event.target.positionApplied.value;
+        let resumeFilled = event.target.resumeFilled.value;
+
+        console.log(name);
+        console.log(email);
+        console.log(phoneNumber);
+        console.log(age);
+        console.log(gender);
+        console.log(qualification);
+        console.log(positionApplied);
+        console.log(resumeFilled);
+        console.log(experience);
+
+        event.target.name.value = '';
+        event.target.email.value = '';
+        event.target.phoneNumber.value = '';
+        event.target.age.value = '';
+        event.target.gender.value = '';
+        event.target.qualification.value = '';
+        event.target.positionApplied.value = '';
+        event.target.resumeFilled.value = '';
+        event.target.experience.value = '';*/
+
+        setShowApplySection(false);
     }
 
     return (
@@ -140,8 +195,8 @@ export default function CareersPage() {
 
             <h3 className="CareerPageHeading">We’re Hiring!</h3>
 
-            <HiringCardContainer jobs={jobs} toggleDescription={toggleDescription}></HiringCardContainer>
-            <ApplySection/>
+            <HiringCardContainer jobs={jobs} toggleDescription={toggleDescription} openApplySection={openApplySection}></HiringCardContainer>
+            <ApplySection job={job} showApplySection={showApplySection} closeApplySection={closeApplySection} submitForm={submitForm} />
 
             <br />
 
@@ -163,7 +218,30 @@ export default function CareersPage() {
                 </div>
             </div>
 
-            <p>We value your time and strive to make the process seamless and transparent.</p>
+            <div className="CareerPageRibbon">
+                <p>We value your time and strive to make the process seamless and transparent.</p>
+            </div>
+
+            <div className="CareerPageContainer">
+                <div className="CareerPageContentContainer">
+                    <div className="CareerPageContentSubContainer">
+                        <h2 className="CareerPageSubHeading">Perks of Joining Dimensio</h2>
+                        <ol className="CareerPageContentList">
+                            <li className="CareerPageContentListItem">Competitive salary and bonuses.</li>
+                            <li className="CareerPageContentListItem">Health insurance and wellness programs.</li>
+                            <li className="CareerPageContentListItem">Paid time off and holidays.</li>
+                            <li className="CareerPageContentListItem">Flexible work schedules.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div className="CareerPageImageContainer">
+                    <img src={teamwork2Image} alt="career image" />
+                </div>
+            </div>
+
+            <div className="CareerPageRibbon">
+                <p>Have Questions? Email us at <a href="mailto:careers@dimensio.com">careers@dimensio.com</a></p>
+            </div>
         </section>
     )
 }

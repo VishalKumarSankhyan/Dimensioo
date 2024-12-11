@@ -5,7 +5,7 @@ function HiringCardContainer(props){
         <div className="CareerPageHiringContainer">
             {
                 props.jobs.map((job) => {
-                    return job != undefined ? <HiringCard job={job} key={job.id} toggleDescription={props.toggleDescription} /> : ''
+                    return job != undefined ? <HiringCard job={job} key={job.id} toggleDescription={props.toggleDescription} openApplySection={props.openApplySection} /> : ''
                 })
 
             }
