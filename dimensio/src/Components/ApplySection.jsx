@@ -4,10 +4,11 @@ function ApplySection({ job, showApplySection, closeApplySection, submitForm }) 
 
     return (
         <>
-            { showApplySection ? 
+            {showApplySection ?
                 <section className="ApplySection">
                     <div className="ApplySectionConatiner">
-                        <form className="ApplySectionForm" method="post" onSubmit={(event)=>submitForm(event)}>
+                        <form className="ApplySectionForm" encType="application/x-www-form-urlencoded" method="post" onSubmit={(e) => { submitForm(e) }}  >
+
                             <div className="ApplySectionFormContainer">
                                 <label htmlFor="name">Name</label>
                                 <input id="name" type="text" name="name" required />
@@ -31,7 +32,7 @@ function ApplySection({ job, showApplySection, closeApplySection, submitForm }) 
                             <div className="ApplySectionFormContainer">
                                 <label htmlFor="male">Gender</label>
                                 <div className="ApplySectionFormSubContainer">
-                                    <input type="radio" name="gender" id="male" value='male'  defaultChecked={true} />
+                                    <input type="radio" name="gender" id="male" value='male' defaultChecked={true} />
                                     <label htmlFor="male">Male</label>
                                 </div>
                                 <div className="ApplySectionFormSubContainer">
@@ -74,18 +75,17 @@ function ApplySection({ job, showApplySection, closeApplySection, submitForm }) 
                                 <label htmlFor="">Position Applied For</label>
                                 <input type="text" name="positionApplied" id="" readOnly={true} value={job.title} />
                             </div>
-
                             <div className="ApplySectionFormContainer">
                                 <label htmlFor="uploadResume">Upload Resume</label>
                                 <label className="ChooseFileButton" htmlFor="uploadResume">Choose File</label>
                                 <div className="ApplySectionFormChooseFileContainer">
-                                    <input type="file" name="resumeFilled" id="uploadResume" required />
+                                    <input type="file" name="file" id="uploadResume" accept=".pdf, .doc, .docx" required />
                                 </div>
                             </div>
 
                             <div className="ApplySectionFormButtonsContainer">
                                 <input type="submit" value="Apply" />
-                                <input type="reset" value="Cancel" onClick={closeApplySection}  />
+                                <input type="reset" value="Cancel" onClick={closeApplySection} />
                             </div>
 
                         </form>

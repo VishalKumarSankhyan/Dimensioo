@@ -116,13 +116,92 @@ export default function CareersPage() {
 
     const submitForm = (event) => {
         event.preventDefault();
+        let url = "https://script.google.com/macros/s/AKfycbx2clSNJ4T0a8ZSUN1t3hmQsJ250KSabrO63QYVJ1mvoD3AQHmA33pw3EoTtFjBaYecxQ/exec";
 
-        let api = "https://script.google.com/macros/s/AKfycbzTDvffrILwqoK5NugHZzTF0R1bVoAYw_7ir6Bde6GGZIObDg07oN1T5ytLHYyR7hHX5w/exec";
+        let file = event.target.file;
 
-        let data = new FormData(event.target);
+        let name = event.target.name.value;
+        let email = event.target.email.value;
+        let phoneNumber = event.target.phoneNumber.value;
+        let age = event.target.age.value;
+        let gender = event.target.gender.value;
+        let experience = event.target.experience.value;
+        let qualification = event.target.qualification.value;
+        let positionApplied = event.target.positionApplied.value;
+
+        let obj = {
+            name: name,
+            email: email,
+            phoneNumber: phoneNumber,
+            age: age,
+            gender: gender,
+            experience: experience,
+            qualification: qualification,
+            positionApplied: positionApplied
+        };
+
+        let fr = new FileReader();
+
+        fr.addEventListener('loadend', () => {
+            let res = fr.result;
+
+            let spt = res.split("base64,")[1];
+
+            console.log(spt);
+
+            obj.base64 = spt;
+            obj.filetype = file.files[0].type;
+            obj.filename = file.files[0].name;
+
+            
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(obj)
+            }).then(r => r.text()).then(data => console.log(data))
+        })
+
+        console.log(obj);
+
+        console.log(file.files[0]);
+
+        fr.readAsDataURL(file.files[0]);
 
 
-        fetch(api,{method:"POST", body:data}).then(res=> res.text()).then(data=>console.log(data))
+        /*let resumeFilled = event.target.file;
+
+        let api = "https://script.google.com/macros/s/AKfycbxQZuwHizVPSnNOnxHz26m88RVy3dNy_gLeGGEZsKUcrlP77crIWWL_xRtJsw4pYqct/exec";
+
+        let formObject = new FormData(event.target);
+
+        const file = resumeFilled.files[0];
+
+        if (!file) {
+            alert('Please select a file to upload.');
+            return;
+        }
+
+
+        const reader = new FileReader();
+
+        console.log(reader);
+
+        reader.onload = function (e) {
+            const base64String = e.target.result.split(',')[1];
+            formObject = {
+                ...formObject,
+                fileData: base64String,
+                fileName: file.name,
+                mimeType: file.type,
+            };
+
+        }
+
+        reader.readAsDataURL(file);
+
+        console.log(formObject);
+
+         fetch(api,{method:"POST", body:formObject}).then(res=> res.text()).then(data=>console.log(data))
+         */
 
         /*let name = event.target.name.value;
         let email = event.target.email.value;
@@ -133,7 +212,7 @@ export default function CareersPage() {
         let qualification = event.target.qualification.value;
         let positionApplied = event.target.positionApplied.value;
         let resumeFilled = event.target.resumeFilled.value;
-
+ 
         console.log(name);
         console.log(email);
         console.log(phoneNumber);
@@ -143,7 +222,7 @@ export default function CareersPage() {
         console.log(positionApplied);
         console.log(resumeFilled);
         console.log(experience);
-
+ 
         event.target.name.value = '';
         event.target.email.value = '';
         event.target.phoneNumber.value = '';
