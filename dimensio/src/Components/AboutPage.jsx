@@ -1,11 +1,12 @@
 import teamLogo from "../Assets/team.png";
+import about_page_illustration_1 from "../Assets/Illustrations/about_page_illustration_1.png";
 export default function AboutPage() {
     return (
         <section className="AboutPage">
             <h2 className="AboutPageHeading">About us</h2>
             <div className="AboutPageContainer">
                 <div className="AboutPageImageContainer">
-                    <img src={teamLogo} alt="team logo" />
+                    <img src={about_page_illustration_1} alt="team logo" />
                 </div>
 
                 <div className="AboutPageContentContainer">

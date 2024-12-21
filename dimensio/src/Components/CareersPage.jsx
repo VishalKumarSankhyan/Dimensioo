@@ -5,6 +5,12 @@ import ApplySection from "./ApplySection";
 import HiringCard from "./HiringCard";
 import HiringCardContainer from "./HiringCardContainer";
 import { useState } from "react";
+
+import careers_page_illustration_1 from "../Assets/Illustrations/careers_page_illustration_1.png";
+import careers_page_illustration_2 from "../Assets/Illustrations/careers_page_illustration_2.png";
+import careers_page_illustration_3 from "../Assets/Illustrations/careers_page_illustration_3.png";
+import careers_page_illustration_4 from "../Assets/Illustrations/careers_page_illustration_4.png";
+
 export default function CareersPage() {
     // <h2 className="CareerPageHeading">Careers</h2>
 
@@ -240,11 +246,11 @@ export default function CareersPage() {
         <section className="CareerPage">
             <div className="CareerPageContainer">
                 <div className="CareerPageImageContainer">
-                    <img src={careerImage} alt="career image" />
+                    <img src={careers_page_illustration_1} alt="career image" />
                 </div>
                 <div className="CareerPageContentContainer">
                     <div className="CareerPageContentSubContainer">
-                        <h2 className="CareerPageContentHeading">Shape the Future with Dimensio.</h2>
+                        <h1 className="CareerPageContentHeading">Shape the Future with Dimensio.</h1>
                         <p className="CareerPageContentSubHeading">At Dimensio, we create digital experiences and opportunities that make an impact. Let’s grow together!</p>
                     </div>
                     <div className="CareerPageContentSubContainer">
@@ -268,7 +274,7 @@ export default function CareersPage() {
                     </div>
                 </div>
                 <div className="CareerPageImageContainer">
-                    <img src={teamworkImage} alt="career image" />
+                    <img src={careers_page_illustration_2} alt="career image" />
                 </div>
             </div>
 
@@ -281,7 +287,7 @@ export default function CareersPage() {
 
             <div className="CareerPageContainer">
                 <div className="CareerPageImageContainer">
-                    <img src={teamwork2Image} alt="career image" />
+                    <img src={careers_page_illustration_3} alt="career image" />
                 </div>
 
                 <div className="CareerPageContentContainer">
@@ -314,7 +320,7 @@ export default function CareersPage() {
                     </div>
                 </div>
                 <div className="CareerPageImageContainer">
-                    <img src={teamwork2Image} alt="career image" />
+                    <img src={careers_page_illustration_4} alt="career image" />
                 </div>
             </div>
 
