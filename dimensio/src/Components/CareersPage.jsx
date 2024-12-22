@@ -159,7 +159,7 @@ export default function CareersPage() {
             obj.filetype = file.files[0].type;
             obj.filename = file.files[0].name;
 
-            
+
             fetch(url, {
                 method: 'POST',
                 body: JSON.stringify(obj)
@@ -244,83 +244,86 @@ export default function CareersPage() {
 
     return (
         <section className="CareerPage">
-            <div className="CareerPageContainer">
-                <div className="CareerPageImageContainer">
-                    <img src={careers_page_illustration_1} alt="career image" />
+
+
+            <div className="container">
+                <div className="subContainer">
+                    <img src={careers_page_illustration_1} alt="home illustration" />
                 </div>
-                <div className="CareerPageContentContainer">
-                    <div className="CareerPageContentSubContainer">
-                        <h1 className="CareerPageContentHeading">Shape the Future with Dimensio.</h1>
-                        <p className="CareerPageContentSubHeading">At Dimensio, we create digital experiences and opportunities that make an impact. Let’s grow together!</p>
-                    </div>
-                    <div className="CareerPageContentSubContainer">
-                        <button className="CareerPageContentButton">Apply Now</button>
+                <div className="subContainer">
+                    <div className="contentBox">
+                        <h1 className="contentHeading">Shape the Future with Dimensio.</h1>
+                        <p className="contentSubHeading">At Dimensio, we create digital experiences and opportunities that make an impact. Let’s grow together!</p>
+                        <a href="#" className="button">Apply Now</a>
                     </div>
                 </div>
             </div>
 
-            <br />
-            <div className="CareerPageContainer">
-                <div className="CareerPageContentContainer">
-                    <div className="CareerPageContentSubContainer">
-                        <h2 className="CareerPageSubHeading">Why Dimensio?</h2>
-                        <ol className="CareerPageContentList">
-                            <li className="CareerPageContentListItem">Innovative and creative environment.</li>
-                            <li className="CareerPageContentListItem">Opportunities for growth and learning.</li>
-                            <li className="CareerPageContentListItem">Flexible working hours or remote options.</li>
-                            <li className="CareerPageContentListItem">Diverse and inclusive workplace.</li>
-                            <li className="CareerPageContentListItem">Collaborative team culture.</li>
+
+            <div className="container">
+                <div className="subContainer">
+                    <div className="bulletPointBox">
+                        <h2 className="bulletPointBoxHeading">Why Dimensio?</h2>
+                        <ol className="bulletPointBoxList">
+                            <li className="bulletPointBoxListItem">Innovative and creative environment.</li>
+                            <li className="bulletPointBoxListItem">Opportunities for growth and learning.</li>
+                            <li className="bulletPointBoxListItem">Flexible working hours or remote options.</li>
+                            <li className="bulletPointBoxListItem">Diverse and inclusive workplace.</li>
+                            <li className="bulletPointBoxListItem">Collaborative team culture.</li>
                         </ol>
                     </div>
                 </div>
-                <div className="CareerPageImageContainer">
-                    <img src={careers_page_illustration_2} alt="career image" />
+
+                <div className="subContainer">
+                    <img src={careers_page_illustration_2} alt="home illustration" />
                 </div>
             </div>
+
+
 
             <h3 className="CareerPageHeading">We’re Hiring!</h3>
 
             <HiringCardContainer jobs={jobs} toggleDescription={toggleDescription} openApplySection={openApplySection}></HiringCardContainer>
             <ApplySection job={job} showApplySection={showApplySection} closeApplySection={closeApplySection} submitForm={submitForm} />
 
-            <br />
-
-            <div className="CareerPageContainer">
-                <div className="CareerPageImageContainer">
-                    <img src={careers_page_illustration_3} alt="career image" />
-                </div>
-
-                <div className="CareerPageContentContainer">
-                    <div className="CareerPageContentSubContainer">
-                        <h2 className="CareerPageSubHeading">How to Join Us</h2>
-                        <ol className="CareerPageContentList">
-                            <li className="CareerPageContentListItem">Submit your application online.</li>
-                            <li className="CareerPageContentListItem">Initial screening and interview.</li>
-                            <li className="CareerPageContentListItem">Skill assessment (if applicable).</li>
-                            <li className="CareerPageContentListItem">Final discussion and onboarding.</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
             <div className="CareerPageRibbon">
                 <p>We value your time and strive to make the process seamless and transparent.</p>
             </div>
 
-            <div className="CareerPageContainer">
-                <div className="CareerPageContentContainer">
-                    <div className="CareerPageContentSubContainer">
-                        <h2 className="CareerPageSubHeading">Perks of Joining Dimensio</h2>
-                        <ol className="CareerPageContentList">
-                            <li className="CareerPageContentListItem">Competitive salary and bonuses.</li>
-                            <li className="CareerPageContentListItem">Health insurance and wellness programs.</li>
-                            <li className="CareerPageContentListItem">Paid time off and holidays.</li>
-                            <li className="CareerPageContentListItem">Flexible work schedules.</li>
+            <div className="container">
+                <div className="subContainer">
+                    <img src={careers_page_illustration_3} alt="home illustration" />
+                </div>
+
+                <div className="subContainer">
+                    <div className="bulletPointBox">
+                        <h2 className="bulletPointBoxHeading">How to Join Us</h2>
+                        <ol className="bulletPointBoxList">
+                            <li className="bulletPointBoxListItem">Submit your application online.</li>
+                            <li className="bulletPointBoxListItem">Initial screening and interview.</li>
+                            <li className="bulletPointBoxListItem">Skill assessment (if applicable).</li>
+                            <li className="bulletPointBoxListItem">Final discussion and onboarding.</li>
                         </ol>
                     </div>
                 </div>
-                <div className="CareerPageImageContainer">
-                    <img src={careers_page_illustration_4} alt="career image" />
+            </div>
+
+
+            <div className="container">
+                <div className="subContainer">
+                    <div className="bulletPointBox">
+                        <h2 className="bulletPointBoxHeading">Perks of Joining Dimensio</h2>
+                        <ol className="bulletPointBoxList">
+                            <li className="bulletPointBoxListItem">Competitive salary and bonuses.</li>
+                            <li className="bulletPointBoxListItem">Health insurance and wellness programs.</li>
+                            <li className="bulletPointBoxListItem">Paid time off and holidays.</li>
+                            <li className="bulletPointBoxListItem">Flexible work schedules.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div className="subContainer">
+                    <img src={careers_page_illustration_4} alt="home illustration" />
                 </div>
             </div>
 
