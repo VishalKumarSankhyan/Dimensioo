@@ -219,32 +219,6 @@ body{
     max-width:  28px;
 }
 
-.MakeInIndiaContainer{
-    display: flex;
-    padding: 8px 18px;
-}
-
-.MakeInIndiaLabel{
-    color: white;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-}
-
-.MakeInIndiaImageContainer{
-    height: 25px;
-    width:  50px;
-    display: flex;
-    justify-content: center;
-}
-
-.MakeInIndiaImageContainer > img{
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-}
-
 .horizontalLine{
     height: 2px;
     width: 90%;
@@ -483,7 +457,7 @@ body{
 }
 
 .ContactPageImageContainer > img{
-    width: 45%;
+    width: 80%;
     height: auto;
     object-fit: contain;
 }
@@ -515,6 +489,43 @@ body{
     align-items: center;
 }
 
+.ContactContentbox{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.ContactContentboxHeading{
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.ContactContentboxSubHeading{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.ContactContentboxButton{
+    padding: 8px 14px;
+    background-color: white;
+    color: #2c3733;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 14px;
+    width:fit-content;
+    transition-delay: 1s;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.ContactContentboxButton:hover{
+    background-color: #2aacac;
+    color: white;
+}
 
 .ContactForm{
     padding: 28px;
@@ -555,7 +566,7 @@ body{
 }
 
 .ContactFormSubContainer > textarea:focus{
-    border-color: #6ffcd1;
+    border-color: #2aacac;
 }
 
 
@@ -571,14 +582,44 @@ body{
     background-color: black;
     color: white;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 10px;
     cursor: pointer;
     border: 1px solid white;
     white-space: nowrap;
     font-size: 14px;
     width:100%;
+    outline: none;
+    border-bottom: none !important;
 }
 
+.ContactFormButton:hover{
+    background-color: #2aacac;
+    color: white;
+
+}
+
+
+.contactRibbon{
+    color: white;
+    min-height: 300px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.contactContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.contactCard{
+    min-height: 250px;
+    min-width: 300px;
+    background-color: #2aacac;
+    border-radius: 10px;
+}
 
 
 /* --------------------------- */
