@@ -14,7 +14,7 @@ export default function ContactPage() {
 
     return (
 
-        <section className="ContactPage">
+        <section className="pageContainer">
 
             <div className="container">
                 <div className="subContainer">

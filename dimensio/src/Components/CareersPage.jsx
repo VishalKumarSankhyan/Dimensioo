@@ -243,8 +243,7 @@ export default function CareersPage() {
     }
 
     return (
-        <section className="CareerPage">
-
+        <section className="pageContainer">
 
             <div className="container">
                 <div className="subContainer">

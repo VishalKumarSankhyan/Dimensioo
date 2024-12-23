@@ -1,10 +1,10 @@
 export default function ProductsPage (){
     return (
-        <section className="ProductPage">
-            <h2 className="ProductPageHeading">Products</h2>
-            <div className="ProductPageContainer">
-                <div className="ProductPageImageContainer"></div>
-                <div className="ProductPageContentContainer"></div>
+        <section className="pageContainer">
+            <h4 className="Heading">Products</h4>
+            <div className="container">
+                <div className="subContainer"></div>
+                <div className="subContainer"></div>
             </div>
         </section>
     )

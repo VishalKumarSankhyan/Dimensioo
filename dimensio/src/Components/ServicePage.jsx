@@ -1,7 +1,8 @@
 export default function ServicePage() {
     return (
-        <section className="ServicePage">
-            <h2 className="ServicePageHeading">Service</h2>
+        <section className="pageContainer">
+            <h4 className="Heading">Service</h4>
+            
             <div className="ServicePageContainer">
                 <div className="ServiceCard">
                     <div className="ServiceCardSVGContainer">

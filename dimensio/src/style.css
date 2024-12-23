@@ -11,10 +11,27 @@ body{
 }
 
 
+.AppContainer{
+    background-color: #2c3733;
+    min-width: 300px;
+    max-width: 1500px;
+    margin: auto;
+}
+
+.pageContainer{
+    width: 95%;
+    margin: auto;
+}
+
 
 .container{
     display: flex;
     width: 100%;
+}
+
+.Heading{
+    color: white;
+    padding: 10px;
 }
 
 .subContainer{
@@ -116,11 +133,6 @@ body{
     margin: auto;
 }
 
-.text{
-    color: white;
-
-    height: 200vh;
-}
 
 .Navbar{
     height: 50px;
@@ -980,7 +992,7 @@ body{
     border-radius: 10px;
     box-shadow: 0px 0px 40px #0000001A;
     padding: 20px;
-    max-width: 250px;
+    width: 80%;
     margin: 20px;
     height: fit-content;
 }
@@ -1023,7 +1035,7 @@ body{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
 }
 
@@ -1034,7 +1046,7 @@ body{
     border-radius: 30px;
     text-align: center;
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: normal;
 }
 
@@ -1045,7 +1057,7 @@ body{
     border-radius: 30px;
     text-align: center;
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: normal;
 }
 
@@ -1098,6 +1110,12 @@ body{
     white-space: nowrap;
     font-size: 12px;
     width: 100%;
+}
+
+@media (max-width: 930px) {
+    .CareerPageHiringContainer{
+        
+    }
 }
 
 
