@@ -75,6 +75,7 @@ body{
     white-space: nowrap;
     font-size: 13px;
     width:fit-content;
+    transition: 0.2s ease-out;
 }
 
 .button:hover{
@@ -102,6 +103,83 @@ body{
     margin-bottom: 14px;
 }
 
+
+
+.callToActionContainer{
+    background-color: white;
+    border-radius: 10px;
+    margin: 15px 0px;
+    padding: 20px;
+    display: flex;
+}
+
+.callToActionSubContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.callToActionHeading{
+    text-align: center;
+    color: black;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.callToActionSubHeading{
+    color: black;
+    text-align: center;
+    padding: 0px 20px;
+    font-size: 15px;
+}
+
+
+.callToActionForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.callToActionFormSubContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+.callToActionFormInput{
+    color: black;
+    padding: 10px 14px;
+    border-radius: 10px 0px 0px 10px;
+    border: 2px solid black;
+    outline: none;
+    max-width: 300px;
+    width: 100%;
+}
+
+.callToActionFormButton{
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.callToActionFormButton:hover{
+    background-color: #2aacac;
+    border-color: #2aacac;
+    color: white;
+}
+
+.callToActionFormButton:hover ~ .callToActionFormInput{
+    background-color: #2aacac;
+    border-color: #2aacac;
+}
+
+
 @media (max-width: 930px) {
     .container{
         flex-direction: column;
@@ -113,6 +191,18 @@ body{
 
     .bulletPointBoxList{
         margin-left: 20px;
+    }
+
+    .mobileflexReverse{
+        flex-direction: column-reverse;
+    }
+
+    .callToActionContainer{
+        flex-direction: column;
+    }
+
+    .callToActionForm{
+        margin-top: 15px;
     }
 }
 
@@ -338,6 +428,11 @@ body{
 }
 
 
+
+
+
+
+
 .ribbon{
     width: 95%;
     background-color: white;
@@ -414,6 +509,8 @@ body{
     background-color: white;
 
 }
+
+
 
 
 
@@ -974,8 +1071,29 @@ body{
 
 .CareerPageHiringContainer{
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 3 columns of equal width */
+    grid-template-columns: repeat(4, 1fr); 
+    /* 3 columns of equal width */
     gap: 10px;
+    justify-items: center;
+}
+
+
+@media (max-width: 1080px) {
+    .CareerPageHiringContainer{
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 800px) {
+    .CareerPageHiringContainer{
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 560px) {
+    .CareerPageHiringContainer{
+        grid-template-columns: repeat(1, 1fr); 
+    }
 }
 
 .CareerPageRibbon{
@@ -1112,11 +1230,6 @@ body{
     width: 100%;
 }
 
-@media (max-width: 930px) {
-    .CareerPageHiringContainer{
-        
-    }
-}
 
 
 .ApplySection{
@@ -1266,11 +1379,18 @@ body{
 
 .MobileMenu{
     width: 100%;
-    height: 100vh;
     position: fixed;
     top: 0;
     z-index: 99;
     background-color: #2c3733;
+    max-height: 0px;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.expend{
+    height: 100vh;
+    max-height: 100vh;
 }
 
 .MobileMenuContainer{
@@ -1327,6 +1447,7 @@ body{
     justify-content: center;
     align-items: center;
     color: white;
+    cursor: pointer;
 }
 
 .MobileMenuNavbarButton > svg{
@@ -1468,9 +1589,9 @@ body{
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .CareerPageHiringContainer{
+    /* .CareerPageHiringContainer{
         grid-template-columns: repeat(3, 1fr);
-    }
+    } */
 
     .CareerPageContainer{
         flex-direction: column;
@@ -1484,9 +1605,9 @@ body{
     .ServicePageContainer{
         grid-template-columns: repeat(2, 1fr);
     }
-    .CareerPageHiringContainer{
+    /* .CareerPageHiringContainer{
         grid-template-columns: repeat(2, 1fr);
-    }
+    } */
 }
 
 @media (max-width: 600px) {
@@ -1516,9 +1637,9 @@ body{
     .ServicePageContainer{
         grid-template-columns: repeat(1, 1fr);
     }
-    .CareerPageHiringContainer{
+    /* .CareerPageHiringContainer{
         grid-template-columns: repeat(1, 1fr);
-    }
+    } */
 
     .ServiceCard{
         margin: 20px auto;

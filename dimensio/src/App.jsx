@@ -8,18 +8,18 @@ import { useState } from "react";
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
-  const toggleMobileMenu = ()=>{
-    setShowMenu((prevState)=> !prevState)
+  const toggleMobileMenu = () => {
+    setShowMenu((prevState) => !prevState)
   }
+
+  // showMenu
   return (
     <>
       <AppContainer>
         <Navbar toggleMobileMenu={toggleMobileMenu} />
-        {
-          showMenu ? <MobileMenu toggleMobileMenu={toggleMobileMenu}/> : ''
-        }
-        <Outlet/>
-        <Footer/>
+        <MobileMenu toggleMobileMenu={toggleMobileMenu} showMenu={showMenu} />
+        <Outlet />
+        <Footer />
       </AppContainer>
     </>
   )

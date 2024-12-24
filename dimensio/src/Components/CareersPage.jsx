@@ -259,7 +259,7 @@ export default function CareersPage() {
             </div>
 
 
-            <div className="container">
+            <div className="container mobileflexReverse">
                 <div className="subContainer">
                     <div className="bulletPointBox">
                         <h2 className="bulletPointBoxHeading">Why Dimensio?</h2>
@@ -308,7 +308,7 @@ export default function CareersPage() {
             </div>
 
 
-            <div className="container">
+            <div className="container mobileflexReverse">
                 <div className="subContainer">
                     <div className="bulletPointBox">
                         <h2 className="bulletPointBoxHeading">Perks of Joining Dimensio</h2>

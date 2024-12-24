@@ -25,7 +25,7 @@ export default function HomePage() {
 
             <Ribbon></Ribbon>
 
-            <div className="container">
+            <div className="container mobileflexReverse">
                 <div className="subContainer">
                     <div className="contentBox">
                         <h2 className="contentHeading">Why Dimensio?</h2>

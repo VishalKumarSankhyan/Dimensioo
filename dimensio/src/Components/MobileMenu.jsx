@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import logo from '../Assets/wordlogoWhite.png'
-function MobileMenu({ toggleMobileMenu }) {
+function MobileMenu({ toggleMobileMenu, showMenu }) {
     return (
-        <section className="MobileMenu">
+        <section className={`MobileMenu ${ showMenu ? 'expend' : ''}`}>
             <div className="MobileMenuContainer">
                 <div className="MobileMenuNavbar">
                     <div className="MobileMenuLeftNavbar">

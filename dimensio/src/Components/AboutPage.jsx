@@ -22,7 +22,7 @@ export default function AboutPage() {
                 </div>
             </div>
 
-            <div className="container">
+            <div className="container mobileflexReverse">
                 <div className="subContainer">
                     <div className="bulletPointBox">
                         <h2 className="bulletPointBoxHeading">Who We Are</h2>
@@ -61,7 +61,7 @@ export default function AboutPage() {
             </div>
 
 
-            <div className="container">
+            <div className="container mobileflexReverse">
                 <div className="subContainer">
                     <div className="bulletPointBox">
                         <h2 className="bulletPointBoxHeading">Our Values</h2>
@@ -98,7 +98,7 @@ export default function AboutPage() {
 
 
 
-            <div className="container">
+            <div className="container  mobileflexReverse">
                 <div className="subContainer">
                     <div className="bulletPointBox">
                         <h2 className="bulletPointBoxHeading">Why Dimensio?</h2>
